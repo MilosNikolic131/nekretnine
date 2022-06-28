@@ -107,7 +107,7 @@ class AuthController extends Controller
 
     public function dodajNekretninu(Request $request){
         $polja = $request->validate([
-            'Adresa' => 'required|string',
+            'Adresa' => 'required',
             'cena_po_kvadratu' => 'required',
             'tip_nekretnine' => 'required',
             'agent_zaduzen_za_nekretninu' => 'required'
@@ -119,7 +119,24 @@ class AuthController extends Controller
             'agent_zaduzen_za_nekretninu' => $polja['agent_zaduzen_za_nekretninu']
         ]);
         $response = [
-            'agent' => $nekretnina
+            'nekretnina' => $nekretnina
+        ];
+        return response($response, 201);
+    }
+    public function dodajAgenta(Request $request){
+        $polja = $request->validate([
+            'ime_i_prezime' => 'required|string',
+            'password' => 'required|string',
+            'JMBG' => 'required|string'
+        ]);
+
+        $agent = Agent::create([
+            'ime_i_prezime' => $polja['ime_i_prezime'],
+            'password' => bcrypt($polja['password']),
+            'JMBG' => $polja['JMBG']
+        ]);
+        $response = [
+            'agent' => $agent
         ];
         return response($response, 201);
     }

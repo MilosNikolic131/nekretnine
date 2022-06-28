@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::resource('obilazak', ObilazakController::class)->only(['index','show']);
+Route::resource('obilazak', ObilazakController::class);
 Route::resource('nekretnine', NekretnineController::class)->only(['index','show']);
 Route::resource('tipnekretnine', TipNekretnineController::class)->only(['index','show']);
 Route::resource('agent', AgentController::class)->only(['index','show']);
@@ -30,4 +30,5 @@ Route::post('/loginkorisnik', [AuthController::class, 'loginkorisnik']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/dodajnekretninu', [AuthController::class, 'dodajNekretninu']);
+    Route::post('/dodajagenta', [AuthController::class, 'dodajAgenta']);
 });
