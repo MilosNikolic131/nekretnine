@@ -108,7 +108,7 @@ class AuthController extends Controller
     public function dodajNekretninu(Request $request){
         $polja = $request->validate([
             'Adresa' => 'required|string',
-            'cena_po_kvadratu' => 'required|double',
+            'cena_po_kvadratu' => 'required',
             'tip_nekretnine' => 'required',
             'agent_zaduzen_za_nekretninu' => 'required'
         ]);
