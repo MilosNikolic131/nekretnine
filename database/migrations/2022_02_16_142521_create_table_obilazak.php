@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('table_obilazak', function (Blueprint $table) {
+            $table->increments('id')->unique();
             $table->integer('sifra_nekretnine')->unsigned();
             $table->integer('sifra_agenta')->unsigned();
             $table->string('datum_i_vreme_obilaska');

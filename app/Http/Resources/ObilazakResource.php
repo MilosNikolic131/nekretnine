@@ -15,6 +15,7 @@ class ObilazakResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->resource->id,
             'Sifra agenta' => $this->resource->agentObilazi,
             'Sifra nekretnine' => $this->resource->nekretninuObilazi,
             'Datum i vreme' => $this->resource->datum_i_vreme_obilaska

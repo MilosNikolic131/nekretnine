@@ -11,6 +11,7 @@ class Obilazak extends Model
     protected $table = 'table_obilazak';
     public $timestamps = false;
     protected $fillable = [
+        'id',
         'sifra_agenta',
         'sifra_nekretnine',
         'datum_i_vreme_obilaska',
