@@ -32,9 +32,9 @@ class NekretnineController extends Controller
         return $nekretnina;
     }
 
-    public function delete($id)
+    public function delete($id_nekretnine)
     {
-        return Nekretnine::destroy($id);
+        return Nekretnine::destroy($id_nekretnine);
     }
 
     public function search($prom)

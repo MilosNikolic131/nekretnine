@@ -31,4 +31,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/dodajnekretninu', [AuthController::class, 'dodajNekretninu']);
     Route::post('/dodajagenta', [AuthController::class, 'dodajAgenta']);
+    Route::delete('/nekretnine/{id_nekretnine}', [NekretnineController::class, 'delete']);
 });

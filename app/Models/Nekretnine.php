@@ -9,6 +9,7 @@ class Nekretnine extends Model
 {
     use HasFactory;
     protected $table = 'table_nekretnine';
+    protected $primaryKey = 'id_nekretnine';
     public $timestamps = false;
     protected $fillable = [
         'id_nekretnine',
